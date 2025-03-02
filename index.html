@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Minimal Rubik's Cube Solution</title>
+    <style>
+        /* Clean, modern styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #2c8a00;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2c8a00;
+            margin-top: 30px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .author-details {
+            text-align: left;
+        }
+        .author-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .publish-info {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .step {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .step-title {
+            color: #2c8a00;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .note {
+            background-color: #f0f7e6;
+            padding: 15px;
+            border-left: 4px solid #2c8a00;
+            margin: 20px 0;
+        }
+        .alternative {
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 2px solid #ddd;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A Minimal Rubik's Cube Solution</h1>
+        <div class="subtitle">
+            An easy-to-remember method for solving the Rubik's cube. This method is not for speed cubing but it is great for beginners. Experienced cubers can teach this to their friends and relations.
+        </div>
+        
+        <div class="author-info">
+            <img src="images/author-avatar.jpg" alt="Avishalom Shalit" class="author-avatar">
+            <div class="author-details">
+                <div class="author-name">Avishalom Shalit</div>
+                <div class="publish-info">Published in HackerNoon.com · 7 min read · Jun 25, 2019</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <img src="images/step-last.png" alt="Last step of Rubik's Cube solution" width="700">
+        
+        <div class="note">
+            <strong>Is this post for you?</strong><br>
+            This post is written for two audiences:<br>
+            - <strong>Cube-enthusiasts</strong> who've probably tried teaching it (this method is very easy to teach)<br>
+            - <strong>Cube mostly-indifferentists™</strong> who've considered learning it recreationally, but only if it takes about 15 minutes (you are in luck!)
+        </div>
+
+        <p>Some cube solving methods are <strong>fast</strong>. This one is <strong>small</strong> and can be worked out from first principles (as opposed to memorized arbitrarily). It is composed of a <strong>minimal set of easy moves</strong> with much in common between the steps.</p>
+
+        <div class="step">
+            <div class="step-title">Step 0: Bottom Cross</div>
+            <p>You are on your own. You can put an edge in its place without disturbing others. Don't waste RAM on this, just do it. If you get stuck, there are links to tutorials at the bottom of this post.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 1: "Drop In" — Place First Layer Corners</div>
+            <img src="images/step1.png" alt="Drop in technique" width="700">
+            <p>Remember the front face has the piece of interest (the white side of the piece.)</p>
+            <p><em>Do this for all 4 corners.</em></p>
+            
+            <div class="alternative">
+                <strong>Alternative:</strong>
+                <p>What if the corner was twisted and the white facelet was facing the blue side? <strong>Nothing changes</strong> in principle. The <strong>front face</strong> is now the <strong>blue</strong> face, because it holds the active side which is <strong>orange</strong> (color match).</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 2: Connect the Edge — Second Layer Edges</div>
+            <p>This step involves making use of what we've learned.</p>
+            <p>It has two parts:</p>
+            <ul>
+                <li><strong>Step 2a</strong> moves the corner up and connects it to the edge</li>
+                <li><strong>Step 2b</strong> is actually <strong>Step 1</strong>. Make use of what you know.</li>
+            </ul>
+            <img src="images/step2.png" alt="Connect the edge technique" width="700">
+            <p>Remember: the Front face has the edge piece we are interested in. Color match of the center and the edge forms an upside down T.</p>
+            <p><em>Do this for all 4 middle layer edges.</em></p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 3: "Ping Pong" — Place 3 Top Layer Corners</div>
+            <p>This algorithm keeps one corner in place and swaps the other 3.</p>
+            <img src="images/step3.png" alt="Ping pong technique" width="700">
+            <p>The Yellow, Orange, Blue corner piece is in its right place; nestled between the Yellow, Orange and Blue faces. It may not be oriented correctly. That's fine.</p>
+            
+            <p><strong>Orientation:</strong><br>
+            At this stage of the solve we are only concerned with each corner being placed in the right place (the 3 faces match the sides' colors) but the piece might be rotated in one of 3 ways. We'll take care of that next.</p>
+            
+            <p><strong>Mnemonic:</strong><br>
+            Pay attention to the top right corner; it will ping pong along the top row, always staying in front, always moving out of the way before a side moves up or down.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 4: Twist 3 Corners</div>
+            <img src="images/step4.png" alt="Twist corners technique" width="700">
+            <p>Don't bother remembering the direction. Instead remember that 3 repeats return to the first state, so repeating the pattern twice is like going the other way. Also notice that the edge-corner pair is <strong>never broken</strong> by the active edge moving up and down.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 5: Shuffle the Last Edges</div>
+            <img src="images/step5.png" alt="Shuffle edges technique" width="700">
+            <p>If all 4 are out of place you will need to do this method to get one edge in place, then use that face as the front face. At the end of this stage you are either done or you need to flip some edges where they are. If you need to flip edges, go to Step 6.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">Step 6: Flip the Last Edges</div>
+            <img src="images/step6.png" alt="Flip edges technique" width="700">
+            <p>This is the same as the sneak peek you saw at the start.</p>
+        </div>
+
+        <div class="note">
+            <strong>Summary</strong>
+            <p>This is a minimal solution to the cube. You shouldn't have to remember much. These moves have been selected because they all conform to a small set of rules:</p>
+            <ul>
+                <li>Minimal ingredients</li>
+                <li>Moves either cancel out, or repeat 4 times to complete a circle</li>
+                <li>Top moves away from active edge</li>
+                <li>Moves 1-3 start with the top face turning away, 4-6 start with "up"</li>
+                <li>All moves feature <strong>up</strong> before <strong>down</strong></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>Source: Article by Avishalom Shalit from HackerNoon.com</p>
+        <p>Images created with <a href="https://ruwix.com/online-rubiks-cube-solver-program/">Ruwix</a>.</p>
+    </footer>
+</body>
+</html>
