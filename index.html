@@ -35,18 +35,11 @@
         }
         .author-info {
             display: flex;
-            align-items: center;
             justify-content: center;
             margin: 30px 0;
         }
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
         .author-details {
-            text-align: left;
+            text-align: center;
         }
         .author-name {
             font-weight: bold;
@@ -75,6 +68,7 @@
             display: block;
             margin: 20px auto;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .note {
             background-color: #f0f7e6;
@@ -104,7 +98,6 @@
         </div>
         
         <div class="author-info">
-            <img src="images/author-avatar.jpg" alt="Avishalom Shalit" class="author-avatar">
             <div class="author-details">
                 <div class="author-name">Avishalom Shalit</div>
                 <div class="publish-info">Published in HackerNoon.com · 7 min read · Jun 25, 2019</div>
@@ -113,7 +106,7 @@
     </header>
 
     <main>
-        <img src="images/step-last.png" alt="Last step of Rubik's Cube solution" width="700">
+        <img src="images/final-step.webp" alt="Last step of Rubik's Cube solution" width="700">
         
         <div class="note">
             <strong>Is this post for you?</strong><br>
@@ -126,12 +119,13 @@
 
         <div class="step">
             <div class="step-title">Step 0: Bottom Cross</div>
+            <img src="images/cross.webp" alt="Bottom cross" width="700">
             <p>You are on your own. You can put an edge in its place without disturbing others. Don't waste RAM on this, just do it. If you get stuck, there are links to tutorials at the bottom of this post.</p>
         </div>
 
         <div class="step">
             <div class="step-title">Step 1: "Drop In" — Place First Layer Corners</div>
-            <img src="images/step1.png" alt="Drop in technique" width="700">
+            <img src="images/step1.webp" alt="Drop in technique" width="700">
             <p>Remember the front face has the piece of interest (the white side of the piece.)</p>
             <p><em>Do this for all 4 corners.</em></p>
             
@@ -149,7 +143,7 @@
                 <li><strong>Step 2a</strong> moves the corner up and connects it to the edge</li>
                 <li><strong>Step 2b</strong> is actually <strong>Step 1</strong>. Make use of what you know.</li>
             </ul>
-            <img src="images/step2.png" alt="Connect the edge technique" width="700">
+            <img src="images/step2.webp" alt="Connect the edge technique" width="700">
             <p>Remember: the Front face has the edge piece we are interested in. Color match of the center and the edge forms an upside down T.</p>
             <p><em>Do this for all 4 middle layer edges.</em></p>
         </div>
@@ -157,7 +151,7 @@
         <div class="step">
             <div class="step-title">Step 3: "Ping Pong" — Place 3 Top Layer Corners</div>
             <p>This algorithm keeps one corner in place and swaps the other 3.</p>
-            <img src="images/step3.png" alt="Ping pong technique" width="700">
+            <img src="images/step3.webp" alt="Ping pong technique" width="700">
             <p>The Yellow, Orange, Blue corner piece is in its right place; nestled between the Yellow, Orange and Blue faces. It may not be oriented correctly. That's fine.</p>
             
             <p><strong>Orientation:</strong><br>
@@ -169,19 +163,19 @@
 
         <div class="step">
             <div class="step-title">Step 4: Twist 3 Corners</div>
-            <img src="images/step4.png" alt="Twist corners technique" width="700">
+            <img src="images/step4.webp" alt="Twist corners technique" width="700">
             <p>Don't bother remembering the direction. Instead remember that 3 repeats return to the first state, so repeating the pattern twice is like going the other way. Also notice that the edge-corner pair is <strong>never broken</strong> by the active edge moving up and down.</p>
         </div>
 
         <div class="step">
             <div class="step-title">Step 5: Shuffle the Last Edges</div>
-            <img src="images/step5.png" alt="Shuffle edges technique" width="700">
+            <img src="images/step5.webp" alt="Shuffle edges technique" width="700">
             <p>If all 4 are out of place you will need to do this method to get one edge in place, then use that face as the front face. At the end of this stage you are either done or you need to flip some edges where they are. If you need to flip edges, go to Step 6.</p>
         </div>
 
         <div class="step">
             <div class="step-title">Step 6: Flip the Last Edges</div>
-            <img src="images/step6.png" alt="Flip edges technique" width="700">
+            <img src="images/step6.webp" alt="Flip edges technique" width="700">
             <p>This is the same as the sneak peek you saw at the start.</p>
         </div>
 
@@ -195,6 +189,7 @@
                 <li>Moves 1-3 start with the top face turning away, 4-6 start with "up"</li>
                 <li>All moves feature <strong>up</strong> before <strong>down</strong></li>
             </ul>
+            <img src="images/summary_guidelines.webp" alt="Summary guidelines" width="700">
         </div>
     </main>
 
